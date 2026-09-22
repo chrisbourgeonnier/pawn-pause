@@ -18,7 +18,7 @@ function createPlayer(id, name = "") {
     name,
     pawn: "",
     money: 0,
-    positionId: "go",
+    positionId: "start",
     hasJailFreeCard: false,
     notes: ""
   };
