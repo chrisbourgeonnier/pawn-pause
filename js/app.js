@@ -3,7 +3,7 @@ let gameState = createEmptyGame();
 let textSaveTimer = null;
 let lastEditedTextField = null;
 
-const TEXT_SAVE_DELAY = 600;
+const TEXT_SAVE_DELAY = 1200;
 
 function createPlayerId() {
   if (window.crypto && typeof window.crypto.randomUUID === "function") {
