@@ -255,7 +255,12 @@ function renderPropertyCard(property, propertyState, players) {
         : "Buildable property";
 
   return `
-    <article class="property-card" data-property-id="${safePropertyId}" aria-labelledby="property-title-${safePropertyId}">
+    <article
+      class="property-card"
+      data-property-id="${safePropertyId}"
+      data-colour-group="${escapeHtml(property.colourGroup)}"
+      aria-labelledby="property-title-${safePropertyId}"
+    >
       <header class="property-card-header">
         <div>
           <h3 id="property-title-${safePropertyId}">${escapeHtml(property.name)}</h3>

@@ -15,6 +15,19 @@
   --colour-danger-surface: #fff0f1;
   --colour-focus: #e66a00;
   --colour-shadow: rgba(23, 32, 51, 0.12);
+  --property-light-green: #dcefc9;
+  --property-light-blue: #d9edff;
+  --property-orange: #ffe0bd;
+  --property-green: #cde8d5;
+  --property-light-brown: #ead8c6;
+  --property-purple: #e7d8f3;
+  --property-pink: #ffdbe7;
+  --property-yellow: #fff0ad;
+  --property-dark-green: #bcd8bf;
+  --property-brown: #dec7b4;
+  --property-tourism: #e0d8ff;
+  --property-utility: #daeeec;
+  --property-transport: #e4e6e9;
   --radius-small: 0.5rem;
   --radius-medium: 0.875rem;
   --radius-large: 1.25rem;
@@ -356,6 +369,63 @@ button:hover:not(:disabled) {
   border: 0.0625rem solid var(--colour-border);
   border-radius: var(--radius-small);
   background: var(--colour-surface-muted);
+}
+
+.property-card[data-colour-group="light-green"] {
+  background: var(--property-light-green);
+  border-color: #77a95f;
+}
+
+.property-card[data-colour-group="light-blue"] {
+  background: var(--property-light-blue);
+  border-color: #5d9fd3;
+}
+
+.property-card[data-colour-group="orange"] {
+  background: var(--property-orange);
+  border-color: #c97720;
+}
+
+.property-card[data-colour-group="green"] {
+  background: var(--property-green);
+  border-color: #468c59;
+}
+
+.property-card[data-colour-group="light-brown"] {
+  background: var(--property-light-brown);
+  border-color: #9b7459;
+}
+
+.property-card[data-colour-group="purple"] {
+  background: var(--property-purple);
+  border-color: #8562aa;
+}
+
+.property-card[data-colour-group="pink"] {
+  background: var(--property-pink);
+  border-color: #be5b7d;
+}
+
+.property-card[data-colour-group="yellow"] {
+  background: var(--property-yellow);
+  border-color: #a98200;
+}
+
+.property-card[data-colour-group="dark-green"] {
+  background: var(--property-dark-green);
+  border-color: #357047;
+}
+
+.property-card[data-colour-group="brown"] {
+  background: var(--property-brown);
+  border-color: #79513b;
+}
+
+.property-card[data-colour-group="tourism"],
+.property-card[data-colour-group="utility"],
+.property-card[data-colour-group="transport"] {
+  background: var(--colour-surface-muted);
+  border-color: var(--colour-border);
 }
 
 .player-card > :last-child,
