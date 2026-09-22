@@ -6,7 +6,7 @@ function createEmptyGame() {
     editionId: "vietnam-foxi",
     gameName: "",
     players: [],
-    propertyOwners: {},
+    propertyStates: {},
     currentPlayerId: null,
     updatedAt: ""
   };
@@ -16,10 +16,11 @@ function createPlayer(id, name = "") {
   return {
     id,
     name,
-    colour: "",
+    pawn: "",
     money: 0,
     positionId: "go",
-    hasJailFreeCard: false
+    hasJailFreeCard: false,
+    notes: ""
   };
 }
 
@@ -31,8 +32,19 @@ function isValidGameState(gameState) {
     typeof gameState.editionId === "string" &&
     typeof gameState.gameName === "string" &&
     Array.isArray(gameState.players) &&
-    gameState.propertyOwners &&
-    typeof gameState.propertyOwners === "object" &&
+    gameState.players.every(
+      (player) =>
+        player &&
+        typeof player.id === "string" &&
+        typeof player.name === "string" &&
+        typeof player.pawn === "string" &&
+        typeof player.money === "number" &&
+        typeof player.positionId === "string" &&
+        typeof player.hasJailFreeCard === "boolean" &&
+        typeof player.notes === "string"
+    ) &&
+    gameState.propertyStates &&
+    typeof gameState.propertyStates === "object" &&
     (typeof gameState.currentPlayerId === "string" ||
       gameState.currentPlayerId === null) &&
     typeof gameState.updatedAt === "string"
