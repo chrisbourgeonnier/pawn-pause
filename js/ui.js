@@ -455,6 +455,24 @@ function renderSummary(gameState, edition) {
   }).format(savedDate);
 }
 
+function renderBoardPreview(edition) {
+  const preview = document.getElementById("board-preview");
+  const image = document.getElementById("board-preview-image");
+
+  if (!preview || !image) {
+    return;
+  }
+
+  if (!edition.boardImage) {
+    preview.hidden = true;
+    return;
+  }
+
+  image.src = edition.boardImage.src;
+  image.alt = edition.boardImage.alt;
+  preview.hidden = false;
+}
+
 function renderApp(gameState) {
   const edition = getEditionById(gameState.editionId);
 
@@ -480,6 +498,7 @@ function renderApp(gameState) {
     );
   }
 
+  renderBoardPreview(edition);
   renderPlayers(gameState, edition);
   renderProperties(gameState, edition);
   renderSummary(gameState, edition);

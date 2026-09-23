@@ -59,42 +59,61 @@
             </div>
           </div>
 
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="edition-select">Board edition</label>
-              <select id="edition-select" name="editionId" aria-describedby="edition-help">
-                <option value="vietnam-foxi">Vietnam — Cờ Tỷ Phú</option>
-                <option value="english">English edition</option>
-                <option value="french">French edition</option>
-              </select>
-              <p id="edition-help" class="field-help">
-                The edition determines board positions and purchasable properties.
-              </p>
+          <div class="setup-layout">
+            <div class="form-grid setup-fields">
+              <div class="form-field">
+                <label for="edition-select">Board edition</label>
+                <select id="edition-select" name="editionId" aria-describedby="edition-help">
+                  <option value="vietnam-foxi">Vietnam — Cờ Tỷ Phú</option>
+                  <option value="english">English edition</option>
+                  <option value="french">French edition</option>
+                </select>
+                <p id="edition-help" class="field-help">
+                  The edition determines board positions and purchasable properties.
+                </p>
+              </div>
+
+              <div class="form-field">
+                <label for="game-name">Game name <span class="optional">(optional)</span></label>
+                <input
+                  id="game-name"
+                  name="gameName"
+                  type="text"
+                  maxlength="80"
+                  autocomplete="off"
+                  placeholder="For example: Friday family game"
+                >
+              </div>
+
+              <div class="form-field player-count-field">
+                <label for="player-count">Number of players</label>
+                <select id="player-count" name="playerCount" aria-describedby="player-count-help">
+                  <option value="2">2 players</option>
+                  <option value="3">3 players</option>
+                  <option value="4" selected>4 players</option>
+                  <option value="5">5 players</option>
+                  <option value="6">6 players</option>
+                </select>
+                <p id="player-count-help" class="field-help">Choose from 2 to 6 players.</p>
+              </div>
             </div>
 
-            <div class="form-field">
-              <label for="game-name">Game name <span class="optional">(optional)</span></label>
-              <input
-                id="game-name"
-                name="gameName"
-                type="text"
-                maxlength="80"
-                autocomplete="off"
-                placeholder="For example: Friday family game"
+            <figure
+              id="board-preview"
+              class="board-preview"
+              aria-labelledby="board-preview-caption"
+            >
+              <img
+                id="board-preview-image"
+                src="assets/boards/vn-foxi.jpg"
+                alt="Foxi Cờ Tỷ Phú Việt Nam board layout"
+                width="500"
+                height="500"
               >
-            </div>
-
-            <div class="form-field">
-              <label for="player-count">Number of players</label>
-              <select id="player-count" name="playerCount" aria-describedby="player-count-help">
-                <option value="2">2 players</option>
-                <option value="3">3 players</option>
-                <option value="4" selected>4 players</option>
-                <option value="5">5 players</option>
-                <option value="6">6 players</option>
-              </select>
-              <p id="player-count-help" class="field-help">Choose from 2 to 6 players.</p>
-            </div>
+              <figcaption id="board-preview-caption">
+                Selected board layout
+              </figcaption>
+            </figure>
           </div>
         </section>
 

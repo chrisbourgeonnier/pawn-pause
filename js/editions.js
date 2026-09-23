@@ -4,6 +4,11 @@ const EDITIONS = [
     name: "Vietnam — Cờ Tỷ Phú",
     language: "vi",
 
+    boardImage: {
+      src: "assets/boards/vn-foxi.jpg",
+      alt: "Foxi Cờ Tỷ Phú Việt Nam board layout"
+    },
+
     boardSpaces: [
       { id: "start", space: 0, name: "Bắt đầu", subtitle: "Nhận 2000", type: "start" },
       { id: "cao-bang", space: 1, name: "Cao Bằng", type: "property" },

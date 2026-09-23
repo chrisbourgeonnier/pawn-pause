@@ -252,6 +252,43 @@ main {
   gap: 1rem;
 }
 
+.setup-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.setup-fields {
+  align-content: start;
+}
+
+.player-count-field {
+  max-width: 18rem;
+}
+
+.board-preview {
+  display: grid;
+  gap: 0.5rem;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+}
+
+.board-preview img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 0.125rem solid var(--colour-border);
+  border-radius: var(--radius-small);
+  background: var(--colour-surface-muted);
+  box-shadow: 0 0.25rem 0.75rem var(--colour-shadow);
+  object-fit: cover;
+}
+
+.board-preview figcaption {
+  color: var(--colour-text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
 .form-field {
   display: grid;
   gap: 0.4rem;
@@ -640,5 +677,22 @@ button:hover:not(:disabled) {
   .header-logo {
     width: 7rem;
     height: 7rem;
+  }
+
+  .setup-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+    align-items: center;
+  }
+
+  .setup-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .setup-fields .form-field:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .board-preview {
+    margin: 0;
   }
 }
