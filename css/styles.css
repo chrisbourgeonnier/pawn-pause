@@ -25,6 +25,8 @@
   --property-yellow: #fff0ad;
   --property-dark-green: #bcd8bf;
   --property-brown: #dec7b4;
+  --property-dark-blue: #ccd9f6;
+  --property-red: #ffe0e2;
   --property-tourism: #e0d8ff;
   --property-utility: #daeeec;
   --property-transport: #e4e6e9;
@@ -456,6 +458,16 @@ button:hover:not(:disabled) {
 .property-card[data-colour-group="brown"] {
   background: var(--property-brown);
   border-color: #79513b;
+}
+
+.property-card[data-colour-group="dark-blue"] {
+  background: var(--property-dark-blue);
+  border-color: #36589f;
+}
+
+.property-card[data-colour-group="red"] {
+  background: var(--property-red);
+  border-color: #b33a45;
 }
 
 .property-card[data-colour-group="tourism"],

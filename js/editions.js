@@ -101,6 +101,98 @@ const EDITIONS = [
     properties: []
   },
   {
+    id: "australian-classic",
+    name: "Australia — Classic edition",
+    language: "en",
+    boardImage: {
+      src: "assets/boards/aus-classic.jpg",
+      alt: "Classic Australian Monopoly board layout"
+    },
+
+    boardSpaces: [
+      { id: "go", space: 0, name: "GO", subtitle: "Collect $200 as you pass", type: "start" },
+      { id: "todd-street", space: 1, name: "Todd Street", type: "property" },
+      { id: "community-chest-1", space: 2, name: "Community Chest", type: "community-chest" },
+      { id: "smith-street", space: 3, name: "Smith Street", type: "property" },
+      { id: "income-tax", space: 4, name: "Income Tax", subtitle: "Pay 10% or $200", type: "tax" },
+      { id: "perth-station", space: 5, name: "Perth Station", type: "transport" },
+      { id: "salamanca-place", space: 6, name: "Salamanca Place", type: "property" },
+      { id: "chance-1", space: 7, name: "Chance", type: "chance" },
+      { id: "davey-street", space: 8, name: "Davey Street", type: "property" },
+      { id: "macquarie-street", space: 9, name: "Macquarie Street", type: "property" },
+      { id: "jail", space: 10, name: "Jail", subtitle: "Just Visiting", type: "jail" },
+      { id: "williams-street", space: 11, name: "Williams Street", type: "property" },
+      { id: "australia-post", space: 12, name: "Australia Post", type: "utility" },
+      { id: "barrack-street", space: 13, name: "Barrack Street", type: "property" },
+      { id: "hay-street", space: 14, name: "Hay Street", type: "property" },
+      { id: "adelaide-station", space: 15, name: "Adelaide Station", type: "transport" },
+      { id: "north-terrace", space: 16, name: "North Terrace", type: "property" },
+      { id: "community-chest-2", space: 17, name: "Community Chest", type: "community-chest" },
+      { id: "victoria-square", space: 18, name: "Victoria Square", type: "property" },
+      { id: "rundle-mall", space: 19, name: "Rundle Mall", type: "property" },
+      { id: "free-parking", space: 20, name: "Free Parking", type: "free-parking" },
+      { id: "stanley-street", space: 21, name: "Stanley Street", type: "property" },
+      { id: "chance-2", space: 22, name: "Chance", type: "chance" },
+      { id: "petries-bight", space: 23, name: "Petrie's Bight", type: "property" },
+      { id: "wickham-terrace", space: 24, name: "Wickham Terrace", type: "property" },
+      { id: "flinders-street-station", space: 25, name: "Flinders Street Station", type: "transport" },
+      { id: "collins-street", space: 26, name: "Collins Street", type: "property" },
+      { id: "elizabeth-street", space: 27, name: "Elizabeth Street", type: "property" },
+      { id: "telecom-australia", space: 28, name: "Telecom Australia", type: "utility" },
+      { id: "bourke-street", space: 29, name: "Bourke Street", type: "property" },
+      { id: "go-to-jail", space: 30, name: "Go to Jail", type: "go-to-jail" },
+      { id: "castlereagh-street", space: 31, name: "Castlereagh Street", type: "property" },
+      { id: "george-street", space: 32, name: "George Street", type: "property" },
+      { id: "community-chest-3", space: 33, name: "Community Chest", type: "community-chest" },
+      { id: "pitt-street", space: 34, name: "Pitt Street", type: "property" },
+      { id: "sydney-station", space: 35, name: "Sydney Station", type: "transport" },
+      { id: "chance-3", space: 36, name: "Chance", type: "chance" },
+      { id: "flinders-street", space: 37, name: "Flinders Street", type: "property" },
+      { id: "sales-tax", space: 38, name: "Sales Tax", subtitle: "Pay $100", type: "tax" },
+      { id: "kings-avenue", space: 39, name: "Kings Avenue", type: "property" }
+    ],
+
+    properties: [
+      { id: "todd-street", name: "Todd Street", type: "property", category: "street", colourGroup: "brown", canBuild: true },
+      { id: "smith-street", name: "Smith Street", type: "property", category: "street", colourGroup: "brown", canBuild: true },
+
+      { id: "salamanca-place", name: "Salamanca Place", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+      { id: "davey-street", name: "Davey Street", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+      { id: "macquarie-street", name: "Macquarie Street", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+
+      { id: "williams-street", name: "Williams Street", type: "property", category: "street", colourGroup: "purple", canBuild: true },
+      { id: "barrack-street", name: "Barrack Street", type: "property", category: "street", colourGroup: "purple", canBuild: true },
+      { id: "hay-street", name: "Hay Street", type: "property", category: "street", colourGroup: "purple", canBuild: true },
+
+      { id: "north-terrace", name: "North Terrace", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+      { id: "victoria-square", name: "Victoria Square", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+      { id: "rundle-mall", name: "Rundle Mall", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+
+      { id: "stanley-street", name: "Stanley Street", type: "property", category: "street", colourGroup: "red", canBuild: true },
+      { id: "petries-bight", name: "Petrie's Bight", type: "property", category: "street", colourGroup: "red", canBuild: true },
+      { id: "wickham-terrace", name: "Wickham Terrace", type: "property", category: "street", colourGroup: "red", canBuild: true },
+
+      { id: "collins-street", name: "Collins Street", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+      { id: "elizabeth-street", name: "Elizabeth Street", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+      { id: "bourke-street", name: "Bourke Street", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+
+      { id: "castlereagh-street", name: "Castlereagh Street", type: "property", category: "street", colourGroup: "green", canBuild: true },
+      { id: "george-street", name: "George Street", type: "property", category: "street", colourGroup: "green", canBuild: true },
+      { id: "pitt-street", name: "Pitt Street", type: "property", category: "street", colourGroup: "green", canBuild: true },
+
+      { id: "flinders-street", name: "Flinders Street", type: "property", category: "street", colourGroup: "dark-blue", canBuild: true },
+      { id: "kings-avenue", name: "Kings Avenue", type: "property", category: "street", colourGroup: "dark-blue", canBuild: true },
+
+      { id: "perth-station", name: "Perth Station", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "adelaide-station", name: "Adelaide Station", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "flinders-street-station", name: "Flinders Street Station", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "sydney-station", name: "Sydney Station", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+
+      { id: "australia-post", name: "Australia Post", type: "utility", category: "utility", colourGroup: "utility", canBuild: false },
+      { id: "telecom-australia", name: "Telecom Australia", type: "utility", category: "utility", colourGroup: "utility", canBuild: false }
+    ]
+  },
+  {
     id: "french",
     name: "French edition",
     language: "fr",
