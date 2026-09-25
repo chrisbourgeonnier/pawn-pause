@@ -193,11 +193,96 @@ const EDITIONS = [
     ]
   },
   {
-    id: "french",
-    name: "French edition",
+    id: "french-classic",
+    name: "France — Monopoly Classique",
     language: "fr",
-    boardSpaces: [],
-    properties: []
+    boardImage: {
+      src: "assets/boards/fr-classic.jpg",
+      alt: "French classic Monopoly board with Paris properties"
+    },
+
+    boardSpaces: [
+      { id: "depart", space: 0, name: "Départ", subtitle: "Recevez M200 chaque fois que vous passez ici", type: "start" },
+      { id: "boulevard-de-belleville", space: 1, name: "Boulevard de Belleville", type: "property" },
+      { id: "caisse-de-communaute-1", space: 2, name: "Caisse de communauté", type: "community-chest" },
+      { id: "rue-lecourbe", space: 3, name: "Rue Lecourbe", type: "property" },
+      { id: "impots-sur-le-revenu", space: 4, name: "Impôts sur le revenu", subtitle: "M200", type: "tax" },
+      { id: "gare-montparnasse", space: 5, name: "Gare Montparnasse", type: "transport" },
+      { id: "rue-de-vaugirard", space: 6, name: "Rue de Vaugirard", type: "property" },
+      { id: "chance-1", space: 7, name: "Chance", type: "chance" },
+      { id: "rue-de-courcelles", space: 8, name: "Rue de Courcelles", type: "property" },
+      { id: "avenue-de-la-republique", space: 9, name: "Avenue de la République", type: "property" },
+      { id: "prison", space: 10, name: "Prison", subtitle: "Simple visite", type: "jail" },
+      { id: "boulevard-de-la-villette", space: 11, name: "Boulevard de la Villette", type: "property" },
+      { id: "compagnie-de-distribution-delectricite", space: 12, name: "Compagnie de distribution d'électricité", type: "utility" },
+      { id: "avenue-de-neuilly", space: 13, name: "Avenue de Neuilly", type: "property" },
+      { id: "rue-de-paradis", space: 14, name: "Rue de Paradis", type: "property" },
+      { id: "gare-de-lyon", space: 15, name: "Gare de Lyon", type: "transport" },
+      { id: "avenue-mozart", space: 16, name: "Avenue Mozart", type: "property" },
+      { id: "caisse-de-communaute-2", space: 17, name: "Caisse de communauté", type: "community-chest" },
+      { id: "boulevard-saint-michel", space: 18, name: "Boulevard Saint-Michel", type: "property" },
+      { id: "place-pigalle", space: 19, name: "Place Pigalle", type: "property" },
+      { id: "parc-gratuit", space: 20, name: "Parc gratuit", type: "free-parking" },
+      { id: "avenue-matignon", space: 21, name: "Avenue Matignon", type: "property" },
+      { id: "chance-2", space: 22, name: "Chance", type: "chance" },
+      { id: "boulevard-malesherbes", space: 23, name: "Boulevard Malesherbes", type: "property" },
+      { id: "avenue-henri-martin", space: 24, name: "Avenue Henri-Martin", type: "property" },
+      { id: "gare-du-nord", space: 25, name: "Gare du Nord", type: "transport" },
+      { id: "faubourg-saint-honore", space: 26, name: "Faubourg Saint-Honoré", type: "property" },
+      { id: "place-de-la-bourse", space: 27, name: "Place de la Bourse", type: "property" },
+      { id: "compagnie-de-distribution-des-eaux", space: 28, name: "Compagnie de distribution des eaux", type: "utility" },
+      { id: "rue-la-fayette", space: 29, name: "Rue La Fayette", type: "property" },
+      { id: "allez-en-prison", space: 30, name: "Allez en prison", type: "go-to-jail" },
+      { id: "avenue-de-breteuil", space: 31, name: "Avenue de Breteuil", type: "property" },
+      { id: "avenue-foch", space: 32, name: "Avenue Foch", type: "property" },
+      { id: "caisse-de-communaute-3", space: 33, name: "Caisse de communauté", type: "community-chest" },
+      { id: "boulevard-des-capucines", space: 34, name: "Boulevard des Capucines", type: "property" },
+      { id: "gare-saint-lazare", space: 35, name: "Gare Saint-Lazare", type: "transport" },
+      { id: "chance-3", space: 36, name: "Chance", type: "chance" },
+      { id: "avenue-des-champs-elysees", space: 37, name: "Avenue des Champs-Élysées", type: "property" },
+      { id: "taxe-de-luxe", space: 38, name: "Taxe de luxe", subtitle: "M100", type: "tax" },
+      { id: "rue-de-la-paix", space: 39, name: "Rue de la Paix", type: "property" }
+    ],
+
+    properties: [
+      { id: "boulevard-de-belleville", name: "Boulevard de Belleville", type: "property", category: "street", colourGroup: "brown", canBuild: true },
+      { id: "rue-lecourbe", name: "Rue Lecourbe", type: "property", category: "street", colourGroup: "brown", canBuild: true },
+
+      { id: "rue-de-vaugirard", name: "Rue de Vaugirard", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+      { id: "rue-de-courcelles", name: "Rue de Courcelles", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+      { id: "avenue-de-la-republique", name: "Avenue de la République", type: "property", category: "street", colourGroup: "light-blue", canBuild: true },
+
+      { id: "boulevard-de-la-villette", name: "Boulevard de la Villette", type: "property", category: "street", colourGroup: "pink", canBuild: true },
+      { id: "avenue-de-neuilly", name: "Avenue de Neuilly", type: "property", category: "street", colourGroup: "pink", canBuild: true },
+      { id: "rue-de-paradis", name: "Rue de Paradis", type: "property", category: "street", colourGroup: "pink", canBuild: true },
+
+      { id: "avenue-mozart", name: "Avenue Mozart", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+      { id: "boulevard-saint-michel", name: "Boulevard Saint-Michel", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+      { id: "place-pigalle", name: "Place Pigalle", type: "property", category: "street", colourGroup: "orange", canBuild: true },
+
+      { id: "avenue-matignon", name: "Avenue Matignon", type: "property", category: "street", colourGroup: "red", canBuild: true },
+      { id: "boulevard-malesherbes", name: "Boulevard Malesherbes", type: "property", category: "street", colourGroup: "red", canBuild: true },
+      { id: "avenue-henri-martin", name: "Avenue Henri-Martin", type: "property", category: "street", colourGroup: "red", canBuild: true },
+
+      { id: "faubourg-saint-honore", name: "Faubourg Saint-Honoré", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+      { id: "place-de-la-bourse", name: "Place de la Bourse", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+      { id: "rue-la-fayette", name: "Rue La Fayette", type: "property", category: "street", colourGroup: "yellow", canBuild: true },
+
+      { id: "avenue-de-breteuil", name: "Avenue de Breteuil", type: "property", category: "street", colourGroup: "green", canBuild: true },
+      { id: "avenue-foch", name: "Avenue Foch", type: "property", category: "street", colourGroup: "green", canBuild: true },
+      { id: "boulevard-des-capucines", name: "Boulevard des Capucines", type: "property", category: "street", colourGroup: "green", canBuild: true },
+
+      { id: "avenue-des-champs-elysees", name: "Avenue des Champs-Élysées", type: "property", category: "street", colourGroup: "dark-blue", canBuild: true },
+      { id: "rue-de-la-paix", name: "Rue de la Paix", type: "property", category: "street", colourGroup: "dark-blue", canBuild: true },
+
+      { id: "compagnie-de-distribution-delectricite", name: "Compagnie de distribution d'électricité", type: "utility", category: "utility", colourGroup: "utility", canBuild: false },
+      { id: "compagnie-de-distribution-des-eaux", name: "Compagnie de distribution des eaux", type: "utility", category: "utility", colourGroup: "utility", canBuild: false },
+
+      { id: "gare-montparnasse", name: "Gare Montparnasse", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "gare-de-lyon", name: "Gare de Lyon", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "gare-du-nord", name: "Gare du Nord", type: "transport", category: "station", colourGroup: "transport", canBuild: false },
+      { id: "gare-saint-lazare", name: "Gare Saint-Lazare", type: "transport", category: "station", colourGroup: "transport", canBuild: false }
+    ]
   }
 ];
 
