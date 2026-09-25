@@ -1,9 +1,10 @@
 let gameState = createEmptyGame();
 
+let previouslyFocusedElement = null;
 let textSaveTimer = null;
 let lastEditedTextField = null;
 
-const TEXT_SAVE_DELAY = 1200;
+const TEXT_SAVE_DELAY = 1800;
 
 function createPlayerId() {
   if (window.crypto && typeof window.crypto.randomUUID === "function") {
@@ -397,9 +398,111 @@ function handleReset() {
   setSaveStatus("Saved game reset. A new blank game is ready.");
 }
 
+function getBoardDialogFocusableElements() {
+  const dialog = document.getElementById("board-image-dialog");
+
+  if (!dialog) {
+    return [];
+  }
+
+  return [...dialog.querySelectorAll("button:not([disabled])")];
+}
+
+function openBoardDialog() {
+  const dialog = document.getElementById("board-image-dialog");
+  const closeButton = document.getElementById("close-board-preview");
+
+  if (!dialog || !closeButton || !dialog.hidden) {
+    return;
+  }
+
+  previouslyFocusedElement = document.activeElement;
+  dialog.hidden = false;
+  document.body.classList.add("image-dialog-open");
+  closeButton.focus();
+}
+
+function closeBoardDialog() {
+  const dialog = document.getElementById("board-image-dialog");
+
+  if (!dialog || dialog.hidden) {
+    return;
+  }
+
+  dialog.hidden = true;
+  document.body.classList.remove("image-dialog-open");
+
+  if (previouslyFocusedElement?.isConnected) {
+    previouslyFocusedElement.focus();
+  }
+
+  previouslyFocusedElement = null;
+}
+
+function handleBoardDialogKeydown(event) {
+  const dialog = document.getElementById("board-image-dialog");
+
+  if (!dialog || dialog.hidden) {
+    return;
+  }
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeBoardDialog();
+    return;
+  }
+
+  if (event.key !== "Tab") {
+    return;
+  }
+
+  const focusableElements = getBoardDialogFocusableElements();
+
+  if (!focusableElements.length) {
+    return;
+  }
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+}
+
 function registerEventListeners() {
   const gameForm = document.getElementById("game-form");
   const resetButton = document.getElementById("reset-game-button");
+  const openBoardPreviewButton = document.getElementById("open-board-preview");
+  const closeBoardPreviewButton = document.getElementById("close-board-preview");
+  const closeBoardPreviewImage = document.getElementById(
+    "close-board-preview-image"
+  );
+  const boardDialogBackdrop = document.querySelector(
+    "[data-close-board-dialog]"
+  );
+
+  if (openBoardPreviewButton) {
+    openBoardPreviewButton.addEventListener("click", openBoardDialog);
+  }
+
+  if (closeBoardPreviewButton) {
+    closeBoardPreviewButton.addEventListener("click", closeBoardDialog);
+  }
+
+  if (closeBoardPreviewImage) {
+    closeBoardPreviewImage.addEventListener("click", closeBoardDialog);
+  }
+
+  if (boardDialogBackdrop) {
+    boardDialogBackdrop.addEventListener("click", closeBoardDialog);
+  }
+
+  document.addEventListener("keydown", handleBoardDialogKeydown);
 
   if (gameForm) {
     gameForm.addEventListener("change", (event) => {

@@ -473,6 +473,25 @@ function renderBoardPreview(edition) {
   preview.hidden = false;
 }
 
+function renderBoardDialog(edition) {
+  const dialogImage = document.getElementById("board-image-dialog-image");
+  const dialogTitle = document.getElementById("board-image-dialog-title");
+
+  if (!dialogImage || !dialogTitle) {
+    return;
+  }
+
+  if (!edition.boardImage) {
+    dialogImage.removeAttribute("src");
+    dialogImage.alt = "";
+    return;
+  }
+
+  dialogImage.src = edition.boardImage.src;
+  dialogImage.alt = edition.boardImage.alt;
+  dialogTitle.textContent = `${edition.name} board layout`;
+}
+
 function renderApp(gameState) {
   const edition = getEditionById(gameState.editionId);
 
@@ -499,6 +518,7 @@ function renderApp(gameState) {
   }
 
   renderBoardPreview(edition);
+  renderBoardDialog(edition);
   renderPlayers(gameState, edition);
   renderProperties(gameState, edition);
   renderSummary(gameState, edition);
